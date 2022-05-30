@@ -11,8 +11,8 @@
     <title>Proyecto Integrador</title>
 </head>
 <body>
-
     <header>
+        <!--falta la foto del logo-->
     <nav class="navheader">
         <div>
         <img src="./img/logo.jpg" alt="" >
@@ -21,7 +21,7 @@
         <a href="detail-artist.html" class="menuheader">ARTISTAS</a>
         <a href="detail-album.html" class="menuheader">ALBUMS</a>
     <div class="navbuscador">
-        <form action="./search-results.html" method="GET" class="buscador">
+        <form action="search-results.html" method="GET" class="buscador">
             <input type="text" name="search" value="" placeholder="Búsqueda" class="search">
         </form> 
     </div>
@@ -29,34 +29,37 @@
     </nav>
 </header>
 
-<main>
-       <section class="section1">
 
-        <article class="largo" >
-            
-            <div class="contenedorfoto"><img src="./img/postmalone.jpg" alt=""> </div> 
-            <ul >
-            <li>Stoney</li>
-            <a href="./detail-artist.html" class="sacardilineado largo" ><li>Post Malone</li> </a>
-             <a href="./detail-genres.html" class="sacardilineado largo"> <li>Rock</li></a>
-            <li>2016</li>
-            </ul>
-           <h3>Canciones</h3>
-           <a href="./detail-track.html" class="sacardilineado largo"> 
-               <ul>
-                <li>Feeling Whitney</li>
-                <li>Go Flex</li>
-                <li>Congratulations</li>
-                <li>I Fall Apart</li>
-            </ul> 
-        </a>
-        </article>
+<main class="maingenre">
+    <section class="section1">
+        <div>
+            <h3 class="comogenre"><a href="detail-track.html" > Pop </a> </h3>
+        </div>
+    <div>
+        <a href="detail-artist.html" > <img src="./img/U26.jpg" alt=""> U2 </a>
+    </div>
+    <div>
+        <a href="detail-artist.html"><img src="./img/maddona.jpg" alt="">Madonna </a>
+    </div>
+    <div>
+        <a href="detail-artist.html"><img src="./img/ladygaga.jpg" alt="">Lady Gaga </a>
+    </div>
+    <div>
+        
+        <a href="detail-artist.html"><img src="./img/beattles.jpg" alt="">The Beattles </a>
+    </div>
+    <div>
+        
+        <a href="detail-artist.html"><img src="./img/Shakira.jpg" alt=""> Shakina </a>
+    </div>
+    <!--<div>
+        <a href="detail-artist.html"> <img src="./img/rihanna.jpg" alt="">Rihanna </a>
+    </div> -->
+</section> 
+</main> 
 
-       </section>
 
-</main>
-
-<footer class="bajarfootdetal">
+<footer class="bajarfootdetgen">
     <nav class="navheader">
         <div >
             <a href=" https://twitter.com/?lang=es" target="blanck" class="menuheader"> <i class="fa-brands fa-twitter icon" ></i></a> 
@@ -64,9 +67,9 @@
             <a href=" https://www.whatsapp.com/" target="blanck" class="menuheader" ><i class="fa-brands fa-whatsapp icon"></i> </a> 
            <h3 class="nombres"> Serena Saguier </h3>
            <h3 class="nombres"> Benjamin Galeazzi</h3>
-    </div>
+        </div>
     </nav>
- </footer>
+</footer>
     
 </body>
 </html>

@@ -11,7 +11,6 @@
     <title>Proyecto Integrador</title>
 </head>
 <body>
-
     <header>
     <nav class="navheader">
         <div>
@@ -21,7 +20,7 @@
         <a href="detail-artist.html" class="menuheader">ARTISTAS</a>
         <a href="detail-album.html" class="menuheader">ALBUMS</a>
     <div class="navbuscador">
-        <form action="./search-results.html" method="GET" class="buscador">
+        <form action="search-results.html" method="GET" class="buscador">
             <input type="text" name="search" value="" placeholder="Búsqueda" class="search">
         </form> 
     </div>
@@ -29,34 +28,36 @@
     </nav>
 </header>
 
-<main>
-       <section class="section1">
+ <main class="maingenre ">
+    <section class="section1">
+    <div>
+        <a href="detail-genres.html"> Pop </a>
+    </div>
+    <div>
+        <a href="detail-genres.html">Rock </a>
+    </div>
+    <div>
+        <a href="detail-genres.html">Reaggeton </a>
+    </div>
+    <div>
+        <a href="detail-genres.html">Funk </a>
+    </div>
+    <div>
+        <a href="detail-genres.html"> Country </a>
+    </div>
+    <div>
+        <a href="detail-genres.html"> Metal </a>
+    </div>
+    <div>
+        <a href="detail-genres.html"> Jazz </a>
+    </div>
+    <!--<div>
+        <a href="detail-genres.html"> Soul </a>
+    </div> -->
+</section>
+</main> 
 
-        <article class="largo" >
-            
-            <div class="contenedorfoto"><img src="./img/postmalone.jpg" alt=""> </div> 
-            <ul >
-            <li>Stoney</li>
-            <a href="./detail-artist.html" class="sacardilineado largo" ><li>Post Malone</li> </a>
-             <a href="./detail-genres.html" class="sacardilineado largo"> <li>Rock</li></a>
-            <li>2016</li>
-            </ul>
-           <h3>Canciones</h3>
-           <a href="./detail-track.html" class="sacardilineado largo"> 
-               <ul>
-                <li>Feeling Whitney</li>
-                <li>Go Flex</li>
-                <li>Congratulations</li>
-                <li>I Fall Apart</li>
-            </ul> 
-        </a>
-        </article>
-
-       </section>
-
-</main>
-
-<footer class="bajarfootdetal">
+<footer class="bajarfootgen" >
     <nav class="navheader">
         <div >
             <a href=" https://twitter.com/?lang=es" target="blanck" class="menuheader"> <i class="fa-brands fa-twitter icon" ></i></a> 
@@ -66,7 +67,7 @@
            <h3 class="nombres"> Benjamin Galeazzi</h3>
     </div>
     </nav>
- </footer>
+</footer>
     
 </body>
 </html>
