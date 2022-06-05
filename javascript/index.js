@@ -32,8 +32,6 @@ cantan.innerHTML = cantantes
  .catch(function (error) {
    console.log('El error fue:' + error)
  })
-
- 
  */
  
  /* ARTISTAS */
@@ -66,3 +64,16 @@ for (let i = 0; i < 6; i++) {
 .catch(function (error) {
     console.log('El error fue' + error)
 }) 
+
+/* Respuesta de busquedas -- No funciona */
+/*let form = document.querySelector('form'); */
+let claseInput = document.querySelector('search');
+let claseHtres = document.querySelector('.respuesta');
+
+if (claseInput.value == "") {
+  claseHtres.innerText = 'No has buscado nada'
+} else if (claseInput.value.lenght > 3){
+  claseHtres.innerText = "Debes ingresar mas de 3 letras"
+} else {
+  this.Submit()
+}
