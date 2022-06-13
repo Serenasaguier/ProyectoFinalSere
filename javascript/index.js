@@ -40,11 +40,12 @@ let cantan = document.querySelector('.section2')
 
 for (let i = 0; i < 6; i++) {
  cantan.innerHTML += `<article class="article2">
- <a href="detail-album.html?id=${info.data[i].id}" class="sacardilineado">
+ <a href="detail-album.html?id=${info.data[i].id}">
    <div class="contenedorfoto">  <img src="${info.data[i].cover}" alt=""></div>
        <h3> ${info.data[i].title}</h3>
        <h4>${info.data[i].artist.name}</h4>
-   </a>
+       </a>
+   
 </article>`;
  
 }
@@ -89,14 +90,21 @@ fetch( `https://api.allorigins.win/raw?url=https://api.deezer.com/chart/artist` 
 })
  
 /* Respuesta de busquedas -- No funciona */
-/*let form = document.querySelector('form'); 
-let claseInput = document.querySelector('search');
-let claseHtres = document.querySelector('.respuesta');
 
-if (claseInput.value == "") {
-  claseHtres.innerText = 'No has buscado nada'
-} else if (claseInput.value.lenght > 3){
-  claseHtres.innerText = "Debes ingresar mas de 3 letras"
-} else {
-  this.Submit()
-} */
+
+let form = document.querySelector('form'); 
+let busqueda = document.querySelector('.buscar');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if (busqueda.value == "" || busqueda.value.length <= 2) {
+        let vacio = document.querySelector('.section1');
+        vacio.innerHTML = `<h3 > Esta vacio el campo o debe ser mayor a 2 caracteres </h3> ` ; 
+        let sacar = document.querySelector('.section2 ');
+        sacar.style.display = "none";
+    } else {
+        this.submit();
+    }
+
+}) 
