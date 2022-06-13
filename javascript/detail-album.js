@@ -17,12 +17,14 @@ fetch(link)
  console.log(info);
 let albums = document.querySelector('.section1')
 
-albums.innerHTML += `  <article class="largo" >
+albums.innerHTML += `  <article class="largo" id="alarga">
             
 <div class="contenedorfoto"><img src=" ${info.cover}" alt=""> </div> 
 <ul >
 <li>Album : ${info.title}</li>
-<a href="./detail-artist.html" class="sacardilineado largo" ><li> Arista : ${info.artist.name}</li> </a>
+<a href="./detail-artist.html" class="sacardilineado largo" ><li> Arista : ${info.artist.name}</li>
+<li> Genre : ${info.genres.data[0].name}</li>
+<li> Release date : ${info.release_date} </a>
 </ul 
 <h3>Canciones</h3>
 <a href="./detail-track.html" class="sacardilineado largo"> 
@@ -30,7 +32,10 @@ albums.innerHTML += `  <article class="largo" >
      
  </ul> 
 </a>
-</article> </article>`
+</article> </article>`;
+
+alarga.style.height = "500px";
+
 
 }) 
 .catch(function (error) {
