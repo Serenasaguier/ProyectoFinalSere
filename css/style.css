@@ -18,7 +18,7 @@ header {
     text-decoration: none;
     color: black;
     margin-left: 170px;
-    margin-bottom: 400px;
+    
 }
 
 .menuheader {
@@ -58,15 +58,10 @@ main{
     background-color: black;
 }
 
-.comogenre {
-    margin-right: 00px;
-    margin-top: 90px;
-}
-
 .tituloPpal{
     font-size: 30px;
     color: rgb(243, 135, 243) ;
-    margin-bottom: 70px;
+    margin-bottom: 0px;
     
 }
 
@@ -85,7 +80,7 @@ section{
 }
 .section1{
     margin-left: 100px;
-    margin-top: 600px;
+    margin-top: 300px;
 }
 
 .section2 {
@@ -97,8 +92,8 @@ section{
 }
 
 article{
-    height: 370px;
-    width: 500px;
+    height: 270px;
+    width: 590px;
     background-color: rgb(38, 10, 70);
     margin-left: 70px;
     margin-top: 30px;
@@ -224,7 +219,7 @@ footer {
     margin-top: 270px;
 }
 .bajarfootsearch{
-    margin-top: 270px;
+    margin-top: 80px;
 }
 
 
@@ -245,7 +240,11 @@ header {
     margin-inline: 80px;
     color: black;
     margin-bottom: 0%;
-    width: 1400px;
+
+    width: 89%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
     
 }
 
