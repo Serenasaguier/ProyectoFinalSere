@@ -96,9 +96,9 @@ let busqueda = document.querySelector('.buscar');
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    if (busqueda.value == "" || busqueda.value.length <= 2) {
+    if (busqueda.value == "" ) {
         let vacio = document.querySelector('main');
-        vacio.innerHTML = `<h3 > Esta vacio el campo o debe ser mayor a 2 caracteres </h3> ` ;
+        vacio.innerHTML = `<h3 > Esta vacio el campo </h3> ` ;
         vacio.style.margin = "270px" 
     } else {
         this.submit();

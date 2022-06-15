@@ -34,7 +34,7 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=${id}`
 
     for(let i = 0; i < datos.length; i++){
         etiquetas.innerHTML += `<article class="article3">
-  <a href="detail-artist.html?id=${resultados.data[i].id}" class="sacardilineado">
+  <a href="detail-track.html" class="sacardilineado">
   <div class="contenedorfoto"> <img src="${resultados.data[i].artist.picture}" alt=""> </div>
     <h3>${resultados.data[i].title}</h3>
     <h4> ${resultados.data[i].artist.name} </h4>
@@ -52,17 +52,21 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=${id}`
         e.preventDefault();
 
 
-        if (datos.lenght == "0") {
+        if (datos.length == 0) {
             let vacio = document.querySelector('main');
-            vacio.innerHTML += `<h3 > No se han encontrado busquedas para el termino buscado </h3> ` ;
+            vacio.innerHTML += `<h3 > No se han encontrado busquedas para ${id} </h3> ` ;
             vacio.style.margin = "270px";
             let scc = document.querySelector('#seccion')
             todo = document.querySelector('.todo'); /* no funciona */
             scc.style.display = "none"; /* no funciona */
-        } else if (busqueda.value == "" || busqueda.value.length <=3 ){
+        } else if (busqueda.value == "" ){
             let vacio = document.querySelector('main');
-            vacio.innerHTML += `<h3 > Esta vacio el campo o debe ser mayor a 3 caracteres </h3> ` ;
+            vacio.innerHTML += `<h3> Esta vacio el campo </h3> ` ;
             vacio.style.margin = "270px"
+            let scc = document.querySelector('#seccion')
+            scc.style.display = "none"; 
+        } else{
+            this.submit();
         }
 
     })

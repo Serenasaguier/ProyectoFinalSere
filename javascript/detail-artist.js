@@ -15,6 +15,7 @@ fetch(url)
                             <a href="detail-track.html" class="sacardilineado">
                             <div class="contenedorfoto"> <img src="${artista.picture}" alt=""></div>
                             <h3>Name : ${artista.name}</h3>  
+                            <h3> Number of Albums : ${artista.nb_album} </h3>
                             <ul class="listaAlbums">
                             </ul> 
                         </a>
@@ -27,19 +28,19 @@ fetch(url)
     console.log('Error:'+ error);
 })
 
-/* Albumes de artistas que no funcionan */
-fetch(url)
+/* Albumes de artistas que no funcionan 
+fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/artist/${agarrandolo}/top?limit=50`)
 .then(function (response) {
     response.json();
 })
 .then(function (data) {
     console.log(data)
     let ulArtista = document.querySelector('.listaAlbums')
-    for (let i = 0; i <= 5; i++) {
-       ulArtista.innerHTML=`<li> ${data[i].album.title}</li>` ;
+    
+       ulArtista.innerHTML=`<li> ${data.track}</li>` ;
         
-    }
-}) 
+    
+})  */
 
 /* Respuesta de busquedas -- funciona */
 
