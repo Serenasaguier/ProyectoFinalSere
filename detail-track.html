@@ -19,8 +19,9 @@
         <a href="genres.html" class="menuheader">GENEROS</a>
         
     <div class="navbuscador">
-        <form action="./search-results.html" method="GET" class="buscador">
-            <input type="text" name="search" value="" placeholder="Búsqueda" class="search buscar">
+        <form action="search-results.html" method="GET" class="buscador navbuscador">
+            <input type="text"  value="" name="search" placeholder="Búsqueda" class="search buscar">
+            <button type="submit"> Search</button>
         </form> 
     </div>
 </div>
@@ -29,23 +30,7 @@
 <main>
 
     <section class="section1">
-       <article class="largo">
-           
-          <div class="contenedorfoto"> <img src="./img/postmalone.jpg" alt=""></div>
-           <ul>
-           <h3>Feeling Whitney</h3>
-               <li>Post Malone</li>
-               <li>Stoney</li>
-            </ul>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/35r28RDot7nPE7y9K9H7l0?utm_source=generator" width="80%" height="70px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-           <div class="favoritos">
-                 <input type="Checkbox" name="favoritos" value="">
-                  <label for="">Agregar a favoritos</label>
-            </div>
-             <ul>
-               <a href="./playlist.html" class=" sacardilineado largo">Ver mi playlist
-             </a></ul>
-       </article>
+      
     </section>
 </main>
 <footer class="bajarfootdettr">
@@ -58,6 +43,8 @@
     </div>
     </nav>
     </footer>
+
+    <script src="./javascript/detail-tracks.js" ></script>
     
 </body>
 </html>

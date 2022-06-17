@@ -1,5 +1,4 @@
 
-
 /* busqueda */
 
 let objeto = new URLSearchParams (location.search);
@@ -51,14 +50,12 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=${id}`
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-
         if (datos.length == 0) {
             let vacio = document.querySelector('main');
             vacio.innerHTML += `<h3 > No se han encontrado busquedas para ${id} </h3> ` ;
             vacio.style.margin = "270px";
             let scc = document.querySelector('#seccion')
-            todo = document.querySelector('.todo'); /* no funciona */
-            scc.style.display = "none"; /* no funciona */
+            scc.style.display = "none"; 
         } else if (busqueda.value == "" ){
             let vacio = document.querySelector('main');
             vacio.innerHTML += `<h3> Esta vacio el campo </h3> ` ;
@@ -78,6 +75,4 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=${id}`
     console.log(error)
 }) 
 
-
- /* me falta el this.submit() y si no hay resultados para lo buscado que aparezca eso*/
 

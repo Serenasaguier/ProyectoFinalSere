@@ -28,19 +28,23 @@ fetch(url)
     console.log('Error:'+ error);
 })
 
-/* Albumes de artistas que no funcionan 
-fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/artist/${agarrandolo}/top?limit=50`)
+/* Albumes no hay entonces canciones de artistas que no funcionan */
+
+let rutaArt = `https://api.deezer.com/artist/${agarrandolo}/albums`;
+fetch(rutaArt)
 .then(function (response) {
-    response.json();
+    return response.json();
 })
 .then(function (data) {
-    console.log(data)
-    let ulArtista = document.querySelector('.listaAlbums')
-    
-       ulArtista.innerHTML=`<li> ${data.track}</li>` ;
+    console.log(data);
+    let ulArtista = document.querySelector('.listaAlbums');
+    for (let i = 0; i < 5; i++) {
+       let tracks = data.data[i].title;
+       console.log(tracks);
+       ulArtista.innerHTML += `<li> ${tracks}</li>`
         
-    
-})  */
+    }
+})
 
 /* Respuesta de busquedas -- funciona */
 
@@ -51,9 +55,9 @@ let busqueda = document.querySelector('.buscar');
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    if (busqueda.value == "" || busqueda.value.length <= 2) {
+    if (busqueda.value == "" ) {
         let vacio = document.querySelector('main');
-        vacio.innerHTML = `<h3 > Esta vacio el campo o debe ser mayor a 2 caracteres </h3> ` ;
+        vacio.innerHTML = `<h3 > Esta vacio el campo </h3> ` ;
         vacio.style.margin = "270px" 
     } else {
         this.submit();

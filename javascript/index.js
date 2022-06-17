@@ -5,7 +5,7 @@ fetch('https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/tracks'
   return response.json();
 })
 .then(function (data) {
-  let info = data.data
+  let info = data.data;
   
   console.log(info);
   let songs = document.querySelector(".section1")
@@ -13,8 +13,9 @@ fetch('https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/tracks'
     songs.innerHTML += `<article  class="article1">
     <a href="detail-track.html?id=${info[i].id}" class="sacardilineado">
         <div class="contenedorfoto"><img src="${info[i].album.cover}" alt=""> </div>
-        <h3 class="canciones">${ info[i].title_short}</h3>
-        <h4>${ info[i].duration}</h4>
+        <h3 class="canciones">${info[i].title_short}</h3>
+        <h4> ${info[i].artist.name} </h4>
+        <h4>${info[i].duration}</h4>
     </a>
 
 </article> `
@@ -58,12 +59,12 @@ for (let i = 0; i < 6; i++) {
 
 /* ARTISTAS funciona cambiado */
 
-fetch( `https://api.allorigins.win/raw?url=https://api.deezer.com/chart/artist` )
+fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/chart`)
 .then(function (response) {
     return response.json();
 })
 .then(function(data) {
-  
+  console.log(data)
   let info = data.tracks.data;
   
   console.log(info);
@@ -72,10 +73,11 @@ fetch( `https://api.allorigins.win/raw?url=https://api.deezer.com/chart/artist` 
   for (let i = 0; i < 6; i++) {
      
   caract.innerHTML += `<article class="article3">
-  <a href="detail-artist.html?id=${info[i].artist.id}" class="sacardilineado">
-  <div class="contenedorfoto"> <img src="${info[i].artist.picture}" alt=""> </div>
+  <a href="detail-artist.html?id=${info[i].id}" class="sacardilineado">
+  <div class="contenedorfoto"> <img src="${info[i].picture}" alt=""> </div>
     <h3>${info[i].artist.name}</h3>
-      <h4>${info[i].album.title}</h4>
+    <h4> ${info[i].title} </h4>
+      
       </a>
    
 </article>
