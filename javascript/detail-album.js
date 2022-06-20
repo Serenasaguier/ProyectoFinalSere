@@ -22,16 +22,15 @@ albums.innerHTML += `  <article class="largo" id="alarga">
 <div class="contenedorfoto"><img src=" ${info.cover}" alt=""> </div> 
 <ul >
 <li>Album : ${info.title}</li>
-<a href="./detail-artist.html" class="sacardilineado largo" ><li> Arista : ${info.artist.name}</li>
+<a href="detail-artist.html?id=${info.artist.id}" class="sacardilineado largo"><li> Arista : ${info.artist.name}</li>
 <li> Genre : ${info.genres.data[0].name}</li>
 <li> Release date : ${info.release_date} </a>
 </ul 
 <h3>Canciones</h3>
-<a href="./detail-track.html" class="sacardilineado largo"> 
+
     <ul id="cancionesAlbum">
      
  </ul> 
-</a>
 </article> </article>`;
 
 alarga.style.height = "500px";
@@ -52,7 +51,7 @@ fetch(link)
  console.log(info);
 
  for (let i = 0; i <= 4; i++) {
-     document.querySelector('#cancionesAlbum').innerHTML += `<li>${data.tracks.data[i].title_short}</li> `;
+     document.querySelector('#cancionesAlbum').innerHTML += ` <a href="detail-track.html?id=${data.tracks.data[i].id}" class="sacardilineado largo">  <li>${data.tracks.data[i].title_short}</li> </a>`;
  }
    
  })
@@ -71,7 +70,10 @@ form.addEventListener('submit', function(e) {
         let vacio = document.querySelector('main');
         vacio.innerHTML = `<h3 > Esta vacio el campo </h3> ` ;
         vacio.style.margin = "270px" 
-    } else {
+    } else if (busqueda.value.length <= 3) {
+        vacio.innerHTML = `<h3> El campo debe ser mayor a 3 caracteres </h3>`
+        vacio.style.margin = "270px"
+      } else {
         this.submit();
     }
 

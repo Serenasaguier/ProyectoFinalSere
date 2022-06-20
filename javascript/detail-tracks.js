@@ -11,7 +11,7 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/track/${agarran
     console.log(data);
     let capturo = document.querySelector('.section1');
         
-        capturo.innerHTML += ` <article class="largo">
+        capturo.innerHTML += ` <article class="largo" id="alarga">
            
         <div class="contenedorfoto"> <img src="${data.artist.picture}" alt=""></div>
          <ul>
@@ -21,8 +21,8 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/track/${agarran
          <a href="detail-album.html?id=${data.album.id}" class="sacardilineado largo">
              <li>${data.album.title}</li> </a>
           </ul>
-          <iframe title="deezer-widget" src="https://widget.deezer.com/widget/auto/track/${data.id}" width="40%" height="350" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write">
-        </iframe>
+          <iframe class="repro" title="deezer-widget" src="https://widget.deezer.com/widget/auto/track/${data.id}" width="250px" height="100px" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write">
+    </iframe>
          <div class="favoritos">
                <input type="Checkbox" name="favoritos" value="">
                 <label for="">Agregar a favoritos</label>
@@ -31,6 +31,9 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/track/${agarran
              <a href="./playlist.html" class=" sacardilineado largo">Ver mi playlist
            </a></ul>
      </article>`
+
+     alarga.style.height = "500px";
+     
         
 })
 
@@ -51,7 +54,10 @@ form.addEventListener('submit', function(e) {
         let vacio = document.querySelector('main');
         vacio.innerHTML = `<h3 > Esta vacio el campo </h3> ` ;
         vacio.style.margin = "270px" 
-    } else {
+    } else if (busqueda.value.length <= 3) {
+        vacio.innerHTML = `<h3> El campo debe ser mayor a 3 caracteres </h3>`
+        vacio.style.margin = "270px"
+      }else {
         this.submit();
     }
 }) 

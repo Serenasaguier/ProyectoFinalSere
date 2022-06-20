@@ -15,7 +15,6 @@ fetch('https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/tracks'
         <div class="contenedorfoto"><img src="${info[i].album.cover}" alt=""> </div>
         <h3 class="canciones">${info[i].title_short}</h3>
         <h4> ${info[i].artist.name} </h4>
-        <h4>${info[i].duration}</h4>
     </a>
 
 </article> `
@@ -64,7 +63,6 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/chart`)
     return response.json();
 })
 .then(function(data) {
-  console.log(data)
   let info = data.tracks.data;
   
   console.log(info);
@@ -74,7 +72,7 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/chart`)
      
   caract.innerHTML += `<article class="article3">
   <a href="detail-artist.html?id=${info[i].id}" class="sacardilineado">
-  <div class="contenedorfoto"> <img src="${info[i].picture}" alt=""> </div>
+  <div class="contenedorfoto"> <img src="${info[i].artist.picture}" alt=""> </div>
     <h3>${info[i].artist.name}</h3>
     <h4> ${info[i].title} </h4>
       
@@ -94,15 +92,19 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/chart`)
 
 let form = document.querySelector('form'); 
 let busqueda = document.querySelector('.buscar');
+let vacio = document.querySelector('main');
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     if (busqueda.value == "" ) {
-        let vacio = document.querySelector('main');
         vacio.innerHTML = `<h3 > Esta vacio el campo </h3> ` ;
         vacio.style.margin = "270px" 
-    } else {
+    } else if (busqueda.value.length <= 3) {
+      vacio.innerHTML = `<h3> El campo debe ser mayor a 3 caracteres </h3>`
+      vacio.style.margin = "270px"
+    }
+    else {
         this.submit();
     }
 

@@ -267,9 +267,9 @@ div .divheader{
     
 }
 
-/*img*/
+/*img
 
-/*div .contenedorfoto{
+div.contenedorfoto{
     display: flex;
     flex-wrap: wrap;   
     justify-content: flex-end;

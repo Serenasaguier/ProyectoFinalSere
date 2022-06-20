@@ -29,40 +29,40 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=${id}`
     
     let datos = resultados.data
     let etiquetas = document.querySelector("#seccion")
-    let todo = document.querySelector('.todo'); /* no funciona */
 
     for(let i = 0; i < datos.length; i++){
         etiquetas.innerHTML += `<article class="article3">
-  <a href="detail-track.html" class="sacardilineado">
-  <div class="contenedorfoto"> <img src="${resultados.data[i].artist.picture}" alt=""> </div>
-    <h3>${resultados.data[i].title}</h3>
-    <h4> ${resultados.data[i].artist.name} </h4>
-     
-      </a>
-   
+  <div class="contenedorfoto"> <img src="${resultados.data[i].artist.picture}" alt=""> </div> <br>
+  <a href="detail-track.html?id=${resultados.data[i].id}" class="sacardilineado bajar"> <h3 class="bajar" >${resultados.data[i].title}</h3>  </a>
+   <a href="detail-artist.html?id=${resultados.data[i].artist.id}" class="sacardilineado bajar"> <h4> ${resultados.data[i].artist.name} </h4> </a>
+
 </article>
 `
     }
 
     let form = document.querySelector('.buscador'); 
     let busqueda = document.querySelector('.buscar');
+    let vacio = document.querySelector('main');
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
         if (datos.length == 0) {
-            let vacio = document.querySelector('main');
+            
             vacio.innerHTML += `<h3 > No se han encontrado busquedas para ${id} </h3> ` ;
             vacio.style.margin = "270px";
             let scc = document.querySelector('#seccion')
             scc.style.display = "none"; 
         } else if (busqueda.value == "" ){
-            let vacio = document.querySelector('main');
+            
             vacio.innerHTML += `<h3> Esta vacio el campo </h3> ` ;
             vacio.style.margin = "270px"
             let scc = document.querySelector('#seccion')
             scc.style.display = "none"; 
-        } else{
+        } else if (busqueda.value.length <= 3) {
+            vacio.innerHTML = `<h3> El campo debe ser mayor a 3 caracteres </h3>`
+            vacio.style.margin = "270px"
+          }else{
             this.submit();
         }
 
