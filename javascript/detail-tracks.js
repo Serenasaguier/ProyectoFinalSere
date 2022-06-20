@@ -21,7 +21,7 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/track/${agarran
          <a href="detail-album.html?id=${data.album.id}" class="sacardilineado largo">
              <li>${data.album.title}</li> </a>
           </ul>
-          <iframe class="repro" title="deezer-widget" src="https://widget.deezer.com/widget/auto/track/${data.id}" width="250px" height="100px" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write">
+          <iframe class="repro" title="deezer-widget" src="https://widget.deezer.com/widget/dark/track/${data.id}" width="250px" height="100px" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write">
     </iframe>
          <div class="favoritos">
                <input type="Checkbox" name="favoritos" value="">
@@ -32,7 +32,7 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/track/${agarran
            </a></ul>
      </article>`
 
-     alarga.style.height = "500px";
+     alarga.style.height = "600px";
      
         
 })

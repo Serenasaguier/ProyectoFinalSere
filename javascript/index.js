@@ -1,4 +1,4 @@
-/* CANCIONES funciona cambiado */
+/* CANCIONES  */
 
 fetch('https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/tracks')
 .then(function (response) {
@@ -25,7 +25,7 @@ fetch('https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/tracks'
   console.log('Error:' + error);
 })
 
-/*ALBUMES cambiado bien*/
+/*ALBUMES */
 
 let url = 'https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/albums ';
 fetch(url)
@@ -56,7 +56,7 @@ for (let i = 0; i < 6; i++) {
 })
 
 
-/* ARTISTAS funciona cambiado */
+/* ARTISTAS  */
 
 fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/chart`)
 .then(function (response) {
@@ -87,7 +87,7 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/chart`)
   console.log(error);
 })
  
-/* Respuesta de busquedas -- funciona */
+/* Respuesta de busquedas */
 
 
 let form = document.querySelector('form'); 
@@ -100,9 +100,11 @@ form.addEventListener('submit', function(e) {
     if (busqueda.value == "" ) {
         vacio.innerHTML = `<h3 > Esta vacio el campo </h3> ` ;
         vacio.style.margin = "270px" 
+        vacio.style.marginTop = "330px"
     } else if (busqueda.value.length <= 3) {
       vacio.innerHTML = `<h3> El campo debe ser mayor a 3 caracteres </h3>`
       vacio.style.margin = "270px"
+      vacio.style.marginTop = "300px"
     }
     else {
         this.submit();

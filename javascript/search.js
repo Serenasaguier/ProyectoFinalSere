@@ -11,14 +11,15 @@ busq.innerHTML += ` <div>
 
 busq.style.color = "rgb(243, 135, 243)"
 
-/* Búsqueda tarda en cargar deberá aparecer un spinner, gif animado */
+/* Búsqueda gif animado */
 
+let carga = document.querySelector('#cargando');
 window.addEventListener('load', function () {
-    let carga = document.querySelector('#cargando');
+    
     carga.style.display = "none"
 })
 
-/* Fetch para traer info */
+/* Fetch  */
 
 fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=${id}`)
 .then( function(respuesta){
@@ -32,12 +33,14 @@ fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=${id}`
 
     for(let i = 0; i < datos.length; i++){
         etiquetas.innerHTML += `<article class="article3">
-  <div class="contenedorfoto"> <img src="${resultados.data[i].artist.picture}" alt=""> </div> <br>
-  <a href="detail-track.html?id=${resultados.data[i].id}" class="sacardilineado bajar"> <h3 class="bajar" >${resultados.data[i].title}</h3>  </a>
-   <a href="detail-artist.html?id=${resultados.data[i].artist.id}" class="sacardilineado bajar"> <h4> ${resultados.data[i].artist.name} </h4> </a>
+  <div class="contenedorfoto"> <img src="${resultados.data[i].artist.picture}" alt=""> </div>
+  <div class="chico" > 
+  <a id="mini"  href="detail-track.html?id=${resultados.data[i].id}"  class="sacardilineado"> <h3>${resultados.data[i].title}</h3>  </a> </div>
+   <a href="detail-artist.html?id=${resultados.data[i].artist.id}" class="sacardilineado"> <h4> ${resultados.data[i].artist.name} </h4> </a>
 
 </article>
 `
+
     }
 
     let form = document.querySelector('.buscador'); 

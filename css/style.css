@@ -169,6 +169,15 @@ height: 500px;
 
 }
 
+#alarga{
+    height: 600px;
+}
+
+
+.largo{
+    height: 500px;
+}
+
 /* footer */
 
 footer {
@@ -232,6 +241,10 @@ body {
     background-color: black;
 }
 
+div.chico{
+    height: 170px;
+    width: 200px;
+}
 
 /* header */
 header {
@@ -264,17 +277,16 @@ div .divheader{
 
 .sacardilineado {
     text-decoration: none;
+    height: 0px;
     
 }
 
-/*img
+/*img*/
 
 div.contenedorfoto{
-    display: flex;
-    flex-wrap: wrap;   
-    justify-content: flex-end;
+   height : 100px;
     
-}*/
+}
 
 img {
     border-radius: 50px;
@@ -285,6 +297,12 @@ img {
     height: 90px;
     margin-top: 10px;
 
+}
+
+a#mini{
+    height: 10px;
+    background-color: none;
+    margin-top: none;
 }
 
 /* main  de home */
@@ -389,10 +407,15 @@ article .nombreartist{
     
 }
 
+/* div.chico{
+    height: 0px;
+    margin-top: 20px;
+} */
+
 /*detail-artists */
 
 .detail-artist {
-    height: 300px;
+    height: 400px;
     width: 300px;
 }
 
