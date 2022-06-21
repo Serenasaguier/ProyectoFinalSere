@@ -6,7 +6,7 @@ let id = objeto.get("search");
 
 let busq = document.querySelector('.section1');
 busq.innerHTML += ` <div>
-<h3 class="comogenre"><a href="detail-track.html" > Respuesta de busqueda para : ${id} </a> </h3>
+<h3 class="comogenre"><a href="detail-track.html"> Respuesta de busqueda para : ${id} </a> </h3>
 </div> `
 
 busq.style.color = "rgb(243, 135, 243)"
